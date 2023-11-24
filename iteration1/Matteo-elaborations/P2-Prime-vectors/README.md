@@ -1,7 +1,7 @@
 # P2 and Prime pocket vector elaborations
 
 FEGrow was used to regrow ideas from Matteo and we found that `NC(=O)CNC(=O)C1(c2ccccc2)CCOCC1` scored well and 
-offered vectors to the P2 and Prime pockets. This was used in an arthor search and the hist were scored and grown
+offered vectors to the P2 and Prime pockets. This was used in an arthor search and the hits were scored and grown
 with FEGrow.
 
 ![insparation.png](insparation.png)
