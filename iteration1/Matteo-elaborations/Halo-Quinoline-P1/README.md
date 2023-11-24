@@ -17,5 +17,6 @@ Using `CC(=O)Nc1cccc2nc(Cl)ccc12` as our reference all arthor hits we grown and 
 
 - [halo_best_confs.sdf.tar.gz](results/halo_best_confs.sdf.tar.gz): Contains the best conformers sorted 
 by predicted ic50(nM).
+- [halo_best_confs_fragalysis_ready.sdf.tar.gz](results/halo_best_confs_fragalysis_ready.sdf.tar.gz): An sdf of the top 240 grown molecules ready for upload to fragalysis.
 - [halo_report.html.tar.gz](results/halo_report.html.tar.gz): An interactive html report which can be sorted by predicted affinity or ic50(nM).
 

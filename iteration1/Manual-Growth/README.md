@@ -19,5 +19,6 @@ Using the manual grown molecule as a reference we then grew and scored each of t
 - [manual-elab.html.tar.gz](results/manual-elab.html.tar.gz): An interactive html report which can be sorted by predicted affinity or ic50(nM).
 - [manual_elab_best.sdf.tar.gz](results/manual_elab_best.sdf.tar.gz): Contains the best conformers sorted 
 by predicted ic50(nM).
+- [manual_elab_best_fragalysis_ready.sdf.tar.gz](results/manual_elab_best_fragalysis_ready.sdf.tar.gz): An sdf of the top 110 grown molecules ready for upload to fragalysis.
 
 
