@@ -75,7 +75,7 @@ def workflow(dataset: DesignDataset, output_folder: str):
         print("Building Dataset")
         # make the dummy molecule
         dummy_mol = Chem.MolFromSmiles("CN1C=NC2=C1C(=O)N(C(=O)N2C)C")
-        dummy_mol.SetProp('_Name', dataset.version)
+        dummy_mol.SetProp("_Name", dataset.version)
         data = dataset.dict(exclude={"version", "designs", "tags"})
         for k, v in data.items():
             dummy_mol.SetProp(k, v)
@@ -88,7 +88,9 @@ def workflow(dataset: DesignDataset, output_folder: str):
 
         # now for each dataset select the ligands and add the tags
         for design_set in dataset.designs:
-            print(f"Preparing design set {design_set.sdf_file} selecting {design_set.n_selected}")
+            print(
+                f"Preparing design set {design_set.sdf_file} selecting {design_set.n_selected}"
+            )
             selected = 0
             for molecule in design_set.molecules():
                 # add the design set data
@@ -119,58 +121,58 @@ if __name__ == "__main__":
                 n_selected=20,
                 ref_pdb="Ax0310a",
                 ref_mols=["Ax0351a"],
-                rationale="Enamine real space elaborations around x0351."
+                rationale="Enamine real space elaborations around x0351.",
             ),
             Design(
                 sdf_file="../iteration2/x0365_elab/x0365_elab_available.sdf",
                 n_selected=5,
                 ref_pdb="Ax0310a",
                 ref_mols=["Ax0365a"],
-                rationale="Enamine real space elaborations around x0365."
+                rationale="Enamine real space elaborations around x0365.",
             ),
             Design(
                 sdf_file="../iteration2/x0528_x0556/x0528_elab_p2_p3_avilable.sdf",
                 n_selected=20,
                 ref_pdb="Ax0528a",
                 ref_mols=["Ax0528a", "Ax0556a"],
-                rationale="Enamine real space elaborations around a merge of x0528 and x0556."
+                rationale="Enamine real space elaborations around a merge of x0528 and x0556.",
             ),
             Design(
                 sdf_file="../iteration2/x0875_elab/x0875_elab_available.sdf",
                 n_selected=10,
                 ref_pdb="Ax0875a",
                 ref_mols=["Ax0875a"],
-                rationale="Enamine real space elaborations around x0875."
+                rationale="Enamine real space elaborations around x0875.",
             ),
             Design(
                 sdf_file="../iteration2/x1019/x1019-elab.sdf",
                 n_selected=5,
                 ref_pdb="Ax0310a",
                 ref_mols=["Ax1019a"],
-                rationale="Enamine real space elaborations around x1019."
+                rationale="Enamine real space elaborations around x1019.",
             ),
             Design(
                 sdf_file="../iteration2/x1097_x0310/x1097-x0310_available.sdf",
                 n_selected=20,
                 ref_pdb="Ax0310a",
                 ref_mols=["Ax1097a", "Ax0310a"],
-                rationale="Enamine real space elaborations around a merge of x1097 and x0310."
+                rationale="Enamine real space elaborations around a merge of x1097 and x0310.",
             ),
             Design(
                 sdf_file="../iteration2/x1097_x0739/x1097-x0739-quinoline-P3.sdf",
                 n_selected=16,
                 ref_pdb="Ax0310a",
                 ref_mols=["Ax1097a", "Ax0739a"],
-                rationale="Enamine real space elaborations around a merge of x1097 and x0739."
+                rationale="Enamine real space elaborations around a merge of x1097 and x0739.",
             ),
             Design(
                 sdf_file="../iteration2/x1097_x0922/x1097-x0922_available.sdf",
                 n_selected=10,
                 ref_pdb="Ax0310a",
                 ref_mols=["Ax1097a", "Ax0922a"],
-                rationale="Enamine real space elaborations around a merge of x1097 and x0922."
+                rationale="Enamine real space elaborations around a merge of x1097 and x0922.",
             ),
-        ]
+        ],
     )
 
     workflow(dataset=dataset, output_folder="../iteration2/submission_1")
