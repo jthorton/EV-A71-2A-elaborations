@@ -97,8 +97,13 @@ def workflow(dataset: DesignDataset, output_folder: str):
                 molecule.SetProp("ref_pdb", design_set.ref_pdb)
                 molecule.SetProp("ref_mols", ",".join(design_set.ref_mols))
                 molecule.SetProp("rationale", design_set.rationale)
-                name = molecule.GetProp("smiles").split(" ")[-1]
+                try:
+                    smiles, name = molecule.GetProp("smiles").split(" ")
+                except ValueError:
+                    smiles = molecule.GetProp("smiles")
+                    name = molecule.GetProp("_Name")
                 molecule.SetProp("_Name", name)
+                molecule.SetProp("original SMILES", smiles)
                 writer.write(molecule)
                 selected += 1
                 if selected == design_set.n_selected:
@@ -116,63 +121,63 @@ if __name__ == "__main__":
         submitter_institution="Newcastle University (UK)",
         method="FEGrow-Elaborations",
         designs=[
-            Design(
-                sdf_file="../iteration2/x0351_p2_elab/x0358_p2_available.sdf",
-                n_selected=20,
-                ref_pdb="Ax0310a",
-                ref_mols=["Ax0351a"],
-                rationale="Enamine real space elaborations around x0351.",
-            ),
-            Design(
-                sdf_file="../iteration2/x0365_elab/x0365_elab_available.sdf",
-                n_selected=5,
-                ref_pdb="Ax0310a",
-                ref_mols=["Ax0365a"],
-                rationale="Enamine real space elaborations around x0365.",
-            ),
-            Design(
-                sdf_file="../iteration2/x0528_x0556/x0528_elab_p2_p3_avilable.sdf",
-                n_selected=20,
-                ref_pdb="Ax0528a",
-                ref_mols=["Ax0528a", "Ax0556a"],
-                rationale="Enamine real space elaborations around a merge of x0528 and x0556.",
-            ),
-            Design(
-                sdf_file="../iteration2/x0875_elab/x0875_elab_available.sdf",
-                n_selected=10,
-                ref_pdb="Ax0875a",
-                ref_mols=["Ax0875a"],
-                rationale="Enamine real space elaborations around x0875.",
-            ),
-            Design(
-                sdf_file="../iteration2/x1019/x1019-elab.sdf",
-                n_selected=5,
-                ref_pdb="Ax0310a",
-                ref_mols=["Ax1019a"],
-                rationale="Enamine real space elaborations around x1019.",
-            ),
+            # Design(
+            #     sdf_file="../iteration2/x0351_p2_elab/x0358_p2_available.sdf",
+            #     n_selected=20,
+            #     ref_pdb="Ax0310a",
+            #     ref_mols=["Ax0351a"],
+            #     rationale="Enamine real space elaborations around x0351.",
+            # ),
+            # Design(
+            #     sdf_file="../iteration2/x0365_elab/x0365_elab_available.sdf",
+            #     n_selected=5,
+            #     ref_pdb="Ax0310a",
+            #     ref_mols=["Ax0365a"],
+            #     rationale="Enamine real space elaborations around x0365.",
+            # ),
+            # Design(
+            #     sdf_file="../iteration2/x0528_x0556/x0528_elab_p2_p3_avilable.sdf",
+            #     n_selected=20,
+            #     ref_pdb="Ax0528a",
+            #     ref_mols=["Ax0528a", "Ax0556a"],
+            #     rationale="Enamine real space elaborations around a merge of x0528 and x0556.",
+            # ),
+            # Design(
+            #     sdf_file="../iteration2/x0875_elab/x0875_elab_available.sdf",
+            #     n_selected=10,
+            #     ref_pdb="Ax0875a",
+            #     ref_mols=["Ax0875a"],
+            #     rationale="Enamine real space elaborations around x0875.",
+            # ),
+            # Design(
+            #     sdf_file="../iteration2/x1019/x1019-elab.sdf",
+            #     n_selected=5,
+            #     ref_pdb="Ax0310a",
+            #     ref_mols=["Ax1019a"],
+            #     rationale="Enamine real space elaborations around x1019.",
+            # ),
             Design(
                 sdf_file="../iteration2/x1097_x0310/x1097-x0310_available.sdf",
                 n_selected=20,
                 ref_pdb="Ax0310a",
-                ref_mols=["Ax1097a", "Ax0310a"],
+                ref_mols=["Ax0310a"],
                 rationale="Enamine real space elaborations around a merge of x1097 and x0310.",
             ),
             Design(
                 sdf_file="../iteration2/x1097_x0739/x1097-x0739-quinoline-P3.sdf",
                 n_selected=16,
                 ref_pdb="Ax0310a",
-                ref_mols=["Ax1097a", "Ax0739a"],
+                ref_mols=["Ax0739a"],
                 rationale="Enamine real space elaborations around a merge of x1097 and x0739.",
             ),
             Design(
                 sdf_file="../iteration2/x1097_x0922/x1097-x0922_available.sdf",
                 n_selected=10,
                 ref_pdb="Ax0310a",
-                ref_mols=["Ax1097a", "Ax0922a"],
+                ref_mols=["Ax0922a"],
                 rationale="Enamine real space elaborations around a merge of x1097 and x0922.",
             ),
         ],
     )
 
-    workflow(dataset=dataset, output_folder="../iteration2/submission_1")
+    workflow(dataset=dataset, output_folder="../iteration2/submission_2_1097")
