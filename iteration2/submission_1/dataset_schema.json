@@ -1,0 +1,62 @@
+{
+  "ref_url": "https://github.com/jthorton/EV-A71-2A-elaborations/tree/main/iteration2",
+  "submitter_name": "JTHorton/DJCole",
+  "submitter_institution": "Newcastle University (UK)",
+  "submitter_email": "Josh.Horton@newcastle.ac.uk",
+  "generation_date": "2024-04-02",
+  "method": "FEGrow-Elaborations",
+  "tags": [
+    "cnnaffinityIC50",
+    "cnnaffinity",
+    "rationale"
+  ],
+  "designs": [
+    {
+      "sdf_file": "../iteration2/x0351_p2_elab/x0358_p2_available.sdf",
+      "n_selected": 20,
+      "ref_pdb": "Ax0310a",
+      "ref_mols": [
+        "Ax0351a"
+      ],
+      "rationale": "Enamine real space elaborations around x0351."
+    },
+    {
+      "sdf_file": "../iteration2/x0365_elab/x0365_elab_available.sdf",
+      "n_selected": 5,
+      "ref_pdb": "Ax0310a",
+      "ref_mols": [
+        "Ax0365a"
+      ],
+      "rationale": "Enamine real space elaborations around x0365."
+    },
+    {
+      "sdf_file": "../iteration2/x0528_x0556/x0528_elab_p2_p3_avilable.sdf",
+      "n_selected": 20,
+      "ref_pdb": "Ax0528a",
+      "ref_mols": [
+        "Ax0528a",
+        "Ax0556a"
+      ],
+      "rationale": "Enamine real space elaborations around a merge of x0528 and x0556."
+    },
+    {
+      "sdf_file": "../iteration2/x0875_elab/x0875_elab_available.sdf",
+      "n_selected": 10,
+      "ref_pdb": "Ax0875a",
+      "ref_mols": [
+        "Ax0875a"
+      ],
+      "rationale": "Enamine real space elaborations around x0875."
+    },
+    {
+      "sdf_file": "../iteration2/x1019/x1019-elab.sdf",
+      "n_selected": 5,
+      "ref_pdb": "Ax0310a",
+      "ref_mols": [
+        "Ax1019a"
+      ],
+      "rationale": "Enamine real space elaborations around x1019."
+    }
+  ],
+  "version": "ver_1.2"
+}
